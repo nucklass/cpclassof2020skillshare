@@ -1,0 +1,6 @@
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Matte = "b0b859e2-eb2e-45cd-bd98-8fc21bfdc9fa"
+MySQL = "39abe10b-433b-5dbd-92d4-e302a9df00cd"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Transducers = "28d57a85-8fef-5791-bfe6-a80928e7c999"
