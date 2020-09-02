@@ -6,7 +6,7 @@ using StippleCharts, StippleCharts.Charts
 
 using MySQL, DataFrames
 
-conn = DBInterface.connect(MySQL.Connection, "192.168.86.38", "nick", "hunterglanz";db ="testing")
+conn = DBInterface.connect(MySQL.Connection, "", "nick", "hunterglanz";db ="testing")
 
 tables = DBInterface.execute(conn,"show tables") |> DataFrame
 
@@ -25,7 +25,7 @@ Stipple.register_components(Dsh, StippleCharts.COMPONENTS)
 model = Stipple.init(Dsh)
 
 function query_table(table)
-    conn = DBInterface.connect(MySQL.Connection, "192.168.86.38", "nick", "hunterglanz";db ="testing")
+    conn = DBInterface.connect(MySQL.Connection, "", "nick", "hunterglanz";db ="testing")
 
     t = DBInterface.execute(conn,"select * from $table") |> DataFrame
 

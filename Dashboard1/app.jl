@@ -28,7 +28,7 @@ module Server
 using MySQL, DataFrames, Plots, Transducers
 
 function table_list()
-    conn = DBInterface.connect(MySQL.Connection, "192.168.86.38", "nick", "hunterglanz";db = "testing")
+    conn = DBInterface.connect(MySQL.Connection, "", "nick", "hunterglanz";db = "testing")
     tables = DBInterface.execute(conn,"show tables") |> DataFrame!
     DBInterface.close!(conn)
     return tables.Tables_in_testing
@@ -36,7 +36,7 @@ function table_list()
 
 function var_list(table_selection_input)
     if typeof(table_selection_input) <: AbstractString
-        conn = DBInterface.connect(MySQL.Connection, "192.168.86.38", "nick", "hunterglanz";db ="testing")
+        conn = DBInterface.connect(MySQL.Connection, "", "nick", "hunterglanz";db ="testing")
         
         #using Tranducers.jl for parallel (multithreaded) DataFrame manipulation
         variables = DBInterface.execute(conn,"show columns from $table_selection_input") |> 
